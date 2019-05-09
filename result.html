@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="ratchet.min.css" />
+        <title>健康手帳(HealthHandbook)</title>
+        <script src="./jquery-2.2.4.min.js"></script>
+        <script src="./javaScript/result.js"></script>
+    </head>
+
+    <body>
+        <header class="bar bar-nav">
+            <button class="btn pull-left" onclick="location.href='menu.html'">戻る(Back)</button>
+            <h1 class="title">健康手帳(HealthHandbook)</h1>
+        </header>
+            <br />
+            <br />
+            <br />
+            <div>日付を入力してください。(Please input date)
+                <input type="date" id="txtDate" class="txt" />
+            </div>
+            <br />
+            <div>検査項目を選択してください(Please select ConsultationType)
+                <br />
+                <input id="RblExamination1" type="radio" name="RblExamination" value="Stomach camera" />胃(食道)カメラStomach camera
+                <br />
+                <input id="RblExamination2" type="radio" name="RblExamination" value="Colon camera" />大腸カメラ Colon camera
+                <br />
+                <input id="RblExamination3" type="radio" name="RblExamination" value="Abdominal echo" />腹部エコーAbdominal echo
+                <br />
+                <input id="RblExamination4" type="radio" name="RblExamination" value="Abdominal CT" />腹部CT Abdominal CT
+                <br />
+                <input id="RblExamination5" type="radio" name="RblExamination" value="Mammography" />マンモグラフィー Mammography
+                <br />
+                <input id="RblExamination6" type="radio" name="RblExamination" value="Kidney echo" />腎エコー Kidney echo
+                <br />
+                <input id="RblExamination7" type="radio" name="RblExamination" value="Other" />その他 Other
+            </div>
+            <br />
+            <div>結果(Result)
+                <br />
+                <input id="RblResult1" type="radio" name="RblResult" value="1" />OK
+                <br />
+                <input id="RblResult2" type="radio" name="RblResult" value="2" />要治療(Need treatment)
+            </div>
+            <br />
+            <div>備考(Detail)
+                <br />
+                <input type="text" id="txtdetail" class="txt" />
+            </div>
+            <button class="btn btn-primary btn-block" onclick="resultRegistration()">登録(Register)</button>
+            </div>
+    </body>
+
+</html>

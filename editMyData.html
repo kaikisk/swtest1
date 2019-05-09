@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="ratchet.min.css" />
+        <link rel="stylesheet" href="main.css" />
+        <title>健康手帳(HealthHandbook)</title>
+        <script src="./jquery-2.2.4.min.js"></script>
+        <script src="./javaScript/editmydata.js"></script>
+    </head>
+
+    <body>
+        <header class="bar bar-nav">
+            <button class="btn pull-left" onclick="location.href='myData.html'">戻るBack</button>
+            <h1 class="title">健康手帳 Health Handbook</h1>
+        </header>
+        <br />
+        <br />
+        
+            <div class="input-row">
+                <label class="input-label">連絡先(家族)</label>
+                <input type="number" placeholder="xxx-xxx-xxxx" id="telFam">
+            </div>
+            <div class="input-row">
+                <label class="input-label">連絡先(主治医)</label>
+                <input type="number" placeholder="xxx-xxx-xxxx" id="telAtten">
+            </div>
+            <div class="input-row">
+                <label class="input-label">血液型</label>
+
+                <select name="blood" id="bloodType">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="O">O</option>
+                    <option value="AB">AB</option>
+                </select>
+            </div>
+            <div class="input-row">
+                <label class="input-label">身長</label>
+                <input type="text" placeholder="168.5" id="height">
+            </div>
+            <div class="input-row">
+                <label class="input-label">体重</label>
+                <input type="text" placeholder="63.5" id="weight">
+            </div>
+            <div class="input-row">
+                <label class="input-label">服用している薬1</label>
+                <input type="text" placeholder="薬品名" id="medi1">
+            </div>
+            <div class="input-row">
+                <label class="input-label">服用している薬2</label>
+                <input type="text" placeholder="薬品名" id="medi2">
+            </div>
+            <div class="input-row">
+                <label class="input-label">服用している薬3</label>
+                <input type="text" placeholder="薬品名" id="medi3">
+            </div>
+            <div class="input-row">
+                <label class="input-label">服用している薬4</label>
+                <input type="text" placeholder="薬品名" id="medi4">
+            </div>
+            <div class="input-row">
+                <label class="input-label">服用している薬5</label>
+                <input type="text" placeholder="薬品名" id="medi5">
+            </div>
+            <div class="input-row">
+                <label class="input-label">治療歴</label>
+                <input type="text" placeholder="xx歳ooo症" id="anam">
+            </div>
+            <div class="input-row">
+                <label class="input-label">お名前</label>
+                <input type="text" placeholder="Your name" id="txtName">
+            </div>
+            <div class="input-row">
+                <label class="input-label">メールアドレス</label>
+                <input type="mail" placeholder="kenkou@sample.com" id="txtMail">
+            </div>
+            <div class="input-row">
+                <label class="input-label">パスワード</label>
+                <input type="text" id="txtPass">
+            </div>
+            <button class="btn btn-primary btn-block" id="b">更新(Update)</button>
+        
+    </body>
+
+</html>

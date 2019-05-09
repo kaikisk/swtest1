@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="ratchet.min.css" />
+        <title>健康手帳</title>
+        <script src="./jquery-2.2.4.min.js"></script>
+        <script src="./javaScript/myData.js"></script>
+    </head>
+
+    <body>
+        <header class="bar bar-nav">
+            <button class="btn pull-left" onclick="location.href='menu.html'">戻る(Back)</button>
+            <button class="btn pull-right" onclick="location.href='editMyData.html'">編集(Edit)</button>
+            <h1 class="title">健康手帳(HealthHandbook)</h1>
+        </header>
+        <form>
+            <br />
+            <br />
+            <div class="card">
+                <ul class="table-view">
+                    <li class="table-view-cell table-view-divider">緊急連絡先（家族）(EmergencyCall(Family))</li>
+                    <li class="table-view-cell" id="telFam">(未設定)(Notset)</li>
+                    <li class="table-view-cell table-view-divider">緊急連絡先（主治医）(EmergencyCall(Doc))</li>
+                    <li class="table-view-cell" id="telAtten">(未設定)(Notset)</li>
+                    <li class="table-view-cell table-view-divider">血液型(BloodType)</li>
+                    <li class="table-view-cell" id="bloodType">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">身長(Height)</li>
+                    <li class="table-view-cell" id="height">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">体重(Weight)</li>
+                    <li class="table-view-cell" id="weight">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">服用している薬1(Taking medicine 1)</li>
+                    <li class="table-view-cell" id="medi1">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">服用している薬2(Taking medicine 2)</li>
+                    <li class="table-view-cell" id="medi2">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">服用している薬3(Taking medicine 3)</li>
+                    <li class="table-view-cell" id="medi3">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">服用している薬4(Taking medicine 4)</li>
+                    <li class="table-view-cell" id="medi4">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">服用している薬5(Taking medicine 5)</li>
+                    <li class="table-view-cell" id="medi5">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">自分の病名及び治療歴(Your disease name and treatment history)</li>
+                    <li class="table-view-cell" id="anam">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">お名前(Name)</li>
+                    <li class="table-view-cell" id="txtName">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">メールアドレス(Mail Address)</li>
+                    <li class="table-view-cell" id="txtMail">(未設定)(NotSet)</li>
+                    <li class="table-view-cell table-view-divider">パスワード(Password)</li>
+                    <li class="table-view-cell" id="txtPass">(非表示)(NotDisplaying)</li>
+                </ul>
+            </div>
+
+        </form>
+    </body>
+
+</html>

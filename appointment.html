@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="ratchet.min.css" />
+        <title>健康手帳(HealthHandbook)</title>
+        <script src="./jquery-2.2.4.min.js"></script>
+        <script src="./javaScript/appointment.js"></script>
+    </head>
+
+    <body>
+        <header class="bar bar-nav">
+            <button class="btn pull-left" onclick="location.href='menu.html'">戻る(Back)</button>
+            <h1 class="title">健康手帳(HealthHandbook)</h1>
+        </header>
+            <div>
+                <br /><br /><br /> 日付を入力してください(Please input date)
+                <br />
+                <input type="date" id="txtDate" class="txt" /><br />
+                <br /><br /> 検査項目を選択してください(Please select consaltation type)
+                <br />
+                <input id="RblExamination1" type="radio" name="RblExamination" value="Stomach camera" />胃(食堂)カメラStomach camera
+                <br />
+                <input id="RblExamination2" type="radio" name="RblExamination" value="Colon camera" />大腸カメラ Colon camera
+                <br />
+                <input id="RblExamination3" type="radio" name="RblExamination" value="Abdominal echo" />腹部エコー Abdominal echo
+                <br />
+                <input id="RblExamination4" type="radio" name="RblExamination" value="Abdominal CT" />腹部CT Abdominal CT
+                <br />
+                <input id="RblExamination5" type="radio" name="RblExamination" value="Mammography" />マンモグラフィー Mammography
+                <br />
+                <input id="RblExamination6" type="radio" name="RblExamination" value="Kidney echo" />腎エコー Kidney echo
+                <br />
+                <input id="RblExamination7" type="radio" name="RblExamination" value="Other" />その他 Other
+
+                <br/> 備考(Detail)
+                <br />
+                <input type="text" id="txtdetail" class="txt" />
+                <br />
+                <br />
+                <button class="btn btn-primary btn-block" onclick="appointmentRegistration()">登録(Register)</button>
+                <br />
+
+            </div>
+    </body>
+
+</html>
