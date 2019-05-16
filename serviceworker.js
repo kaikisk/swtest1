@@ -52,7 +52,7 @@ self.addEventListener('fetch', function(event) {
 
 self.addEventListener('fetch', function(event){});
 */
-/*
+
 self.addEventListener('fetch', function(event) {
   //ブラウザが回線に接続しているかをboolで返してくれる
   var online = navigator.onLine;
@@ -98,34 +98,6 @@ self.addEventListener('fetch', function(event) {
         })
     );
   }else{
-    //オフラインのときの制御
-    event.respondWith(
-      caches.match(event.request)
-        .then(function(response) {
-          // キャッシュがあったのでそのレスポンスを返す
-          if (response) {
-            return response;
-          }
-          //オフラインでキャッシュもなかったパターン
-          return caches.match("offline.html")
-              .then(function(responseNodata)
-              {
-                //適当な変数にオフラインのときに渡すリソースを入れて返却
-                //今回はoffline.htmlを返しています
-                return responseNodata;
-              });
-        }
-      )
-    );
-  }
-});
-*/
-
-self.addEventListener('fetch', function(event) {
-  //ブラウザが回線に接続しているかをboolで返してくれる
-  var online = navigator.onLine;
-
-   if(!online){
     //オフラインのときの制御
     event.respondWith(
       caches.match(event.request)
