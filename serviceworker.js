@@ -36,6 +36,7 @@ self.addEventListener('install', function(event){
     event.waitUntil(
         caches.open(STATIC_CACHE_NAME)
         .then(function(cache){
+            console.log('Install cache');
             return cache.addAll(STATIC_FILES);
         })
     )
