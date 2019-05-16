@@ -41,7 +41,7 @@ self.addEventListener('install', function(event){
         })
     )
 })
-
+/*
 self.addEventListener('fetch', function(event) {
     event.respondWith(
         caches.match(event.request).then(function(response) {
@@ -49,10 +49,10 @@ self.addEventListener('fetch', function(event) {
         })
     );
 });
-/*
+
 self.addEventListener('fetch', function(event){});
 */
-/*
+
 self.addEventListener('fetch', function(event) {
   //ブラウザが回線に接続しているかをboolで返してくれる
   var online = navigator.onLine;
@@ -119,7 +119,6 @@ self.addEventListener('fetch', function(event) {
     );
   }
 });
-*/
 
 const STATIC_CACHE_NAMES = [
     STATIC_CACHE_NAME
