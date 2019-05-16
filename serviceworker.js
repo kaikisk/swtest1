@@ -10,6 +10,7 @@ var STATIC_FILES = [
     ORIGIN + '/editMyData.html',
     ORIGIN + '/menu.html',
     ORIGIN + '/myData.html',
+    ORIGIN + '/manifest.json',
     ORIGIN + '/newlogin.html',
     ORIGIN + '/result.html',
     ORIGIN + '/index.html',
