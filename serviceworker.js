@@ -10,7 +10,6 @@ var STATIC_FILES = [
     ORIGIN + '/editMyData.html',
     ORIGIN + '/menu.html',
     ORIGIN + '/myData.html',
-    ORIGIN + '/manifest.json',
     ORIGIN + '/newlogin.html',
     ORIGIN + '/result.html',
     ORIGIN + '/index.html',
@@ -78,7 +77,7 @@ self.addEventListener('fetch', function(event) {
                 //ここ&&に修正するかもです
                 if(response || response.status == 200){
                   //現行のキャッシュに追加
-                  caches.open(CACHE_NAME)
+                  caches.open(STATIC_CACHE_NAME)
                     .then(function(cache)
                     {
                       cache.put(event.request, cloneResponse)
