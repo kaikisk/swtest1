@@ -1,4 +1,4 @@
-var ORIGIN = location.protocol + '//' + location.hostname + '/self';
+var ORIGIN = location.protocol + '//' + location.hostname + '/hhswa';
 var STATIC_CACHE_NAME = 'static_v1';
 console.log('ORIGIN : ' + ORIGIN);
 var STATIC_FILES = [
@@ -12,6 +12,7 @@ var STATIC_FILES = [
     ORIGIN + '/myData.html',
     ORIGIN + '/newlogin.html',
     ORIGIN + '/result.html',
+    ORIGIN + '/index.html',
     ORIGIN + '/ratchet.min.css',
     ORIGIN + '/main.css',
     ORIGIN + '/Image/shikkan1.png',
@@ -31,27 +32,6 @@ var STATIC_FILES = [
 var STATIC_FILE_URL_HASH = {};
 STATIC_FILES.forEach(function(x) {STATIC_FILE_URL_HASH[x] = true});
 
-/*
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(STATIC_CACHE_NAME)
-        .then(function(cache) {
-            return Promise.all(STATIC_FILES.map(function(url) {
-                return fetch(new Request(url))
-                .then(function(response) {
-                    console.log('requesting : ' + response.url + ', response : ' + response);
-                    if(!response.ok) {
-                        return Promise.reject('Invalid response. URL: ' + response.url + 
-                        'Status: ' + response.status);
-                    }
-                    return cache.put(response.url, response);
-                });
-            }));
-        })
-    )
-})
-*/
-
 self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(STATIC_CACHE_NAME)
@@ -70,16 +50,6 @@ self.addEventListener('install', function(event) {
     );
 });
 
-/*
-self.addEventListener('fetch', function(event) {
-    if(!STATIC_FILE_URL_HASH[event.request.url]) return;
-    //let cache = caches.match(event.request, {cacheName: STATIC_CACHE_NAME});
-    //if(!cache) return;
-    //event.respondWith(cache);
-    event.respondWith(caches.match(event.request, { cacheName: STATIC_CACHE_NAME}));
-});
-
-*/
 self.addEventListener('fetch', function(event) {
     event.respondWith(
         caches.match(event.request).then(function(response) {
@@ -91,22 +61,6 @@ self.addEventListener('fetch', function(event) {
 const STATIC_CACHE_NAMES = [
     STATIC_CACHE_NAME
 ];
-
-/*
-
-self.addEventListener('activate', function(event) {
-    var cacheDeleting = function(keys) {
-        var promises = [];
-        keys.forEach(function(cacheName) 
-            if(cacheName != STATIC_CACHE_NAME) {
-                promises.push(caches.delete(cacheName));
-            }
-        });
-        return Promise.all(promises);
-    }
-    event.waitUntil(caches.keys().then(cacheDeleting));
-});
-*/
 
 self.addEventListener('activate', function(event) {
     event.waitUntil(
