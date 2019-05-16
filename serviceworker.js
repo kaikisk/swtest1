@@ -32,23 +32,14 @@ var STATIC_FILES = [
 var STATIC_FILE_URL_HASH = {};
 STATIC_FILES.forEach(function(x) {STATIC_FILE_URL_HASH[x] = true});
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function(event){
     event.waitUntil(
         caches.open(STATIC_CACHE_NAME)
-            .then(function(cache) {
-                return Promise.all(
-                    STATIC_FILES.map(function(url) {
-                        return fetch(new Request(url, { cache: 'no-cache', mode: 'no-cors'}))
-                        .then(function(response) {
-                            console.log('saving cache : ' + url);
-                            return cache.put(url, response);
-                        });
-
-                    })
-                );
-            })
-    );
-});
+        .then(function(cache){
+            return cache.addAll(STATIC_FILES);
+        })
+    )
+})
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(
