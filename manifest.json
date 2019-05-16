@@ -2,7 +2,7 @@
     "name": "健康手帳(HealthHandbook)",
     "short_name": "HHSW",
     "background_color": "#cccccc",
-    "start_url": "./?utm_source=homescreen",
+    "start_url": "./index.html",
     "icons": [{
       "src": "./revealweb.png",
       "sizes": "80x80",
