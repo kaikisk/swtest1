@@ -17,7 +17,7 @@
             console.log('loading serviceworker');
            window.addEventListener('load', function() {
               if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register("/sw.js")
+                navigator.serviceWorker.register("/serviceworker.js")
                   .then(function(registration) {
                     return registration.pushManager.getSubscription().then(function(subscription) {
                       if (subscription) {
