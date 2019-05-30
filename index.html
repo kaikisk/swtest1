@@ -15,7 +15,6 @@
         <script src="./javaScript/login.js"></script>
         <script> 
             console.log('loading serviceworker');
-           window.addEventListener('load', function() {
               if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register("./serviceworker.js")
                   .then(function(registration) {
@@ -30,8 +29,7 @@
                   }).then(function(subscription) {
                     console.log("pushManager endpoint:", subscription.endpoint) 
                   }
-              }
-            });
+              };
         </script>
     </head>
 
