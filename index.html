@@ -17,7 +17,7 @@
             console.log('loading serviceworker');
            window.addEventListener('load', function() {
               if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register("/serviceworker.js")
+                navigator.serviceWorker.register("./serviceworker.js")
                   .then(function(registration) {
                     return registration.pushManager.getSubscription().then(function(subscription) {
                       if (subscription) {
@@ -29,9 +29,7 @@
                     })
                   }).then(function(subscription) {
                     console.log("pushManager endpoint:", subscription.endpoint) 
-                  }).catch(function(error) {
-                    console.warn("serviceWorker error:", error)
-                  })
+                  }
               }
             });
         </script>
