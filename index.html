@@ -15,21 +15,12 @@
         <script src="./javaScript/login.js"></script>
         <script> 
             console.log('loading serviceworker');
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register("./serviceworker.js")
-                  .then(function(registration) {
-                    return registration.pushManager.getSubscription().then(function(subscription) {
-                      if (subscription) {
-                        return subscription
-                      }
-                      return registration.pushManager.subscribe({
-                        userVisibleOnly: true
-                      })
-                    })
-                  }).then(function(subscription) {
-                    console.log("pushManager endpoint:", subscription.endpoint) 
-                  })
-              };
+            navigator.serviceWorker
+                .register('./serviceworker.js', { scope: '.'})
+                .then(function(registration) {
+                    console.log('service worker completd');
+                    registration.update();
+                });
         </script>
     </head>
 
