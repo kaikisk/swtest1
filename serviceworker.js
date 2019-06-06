@@ -139,29 +139,16 @@ self.addEventListener('activate', function(event) {
     );
 });
 
-self.addEventListener("push", function(event) {
-  event.waitUntil(
-    self.registration.pushManager.getSubscription()
-      .then(function(subscription) {
-        if (subscription) {
-          return subscription.endpoint;
-        }
-        throw new Error('User not subscribed');
-    })
-    .then(function(res) {
-      return fetch('/notifications.json');
-    })
-    .then(function(res) {
-      if (res.status === 200) {
-        return res.json();
-      }
-      throw new Error('notification api response error')
-    })
-    .then(function(res) {
-      return self.registration.showNotification(res.title, {
-        icon: 'revealweb.png',
-        body: res.body
-      })
-    })
-  )
+self.addEventListener('push', function(event) {
+    event.waitUntil(
+        self.registration.showNotification('Push Received', {
+            body: 'Push Notification Received',
+            tag: 'push-notification-tag' 
+        })
+    );
+});
+
+self.addEventListener("notificationclick", function(event) {
+    event.notification.close();
+}, false);
 })
