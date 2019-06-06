@@ -16,7 +16,7 @@
         <script> 
             console.log('loading serviceworker');
             navigator.serviceWorker
-                .register('./serviceworker.js', { scope: '.'})
+                .register('./firebase-messaging-sw.js', { scope: '.'})
                 .then(function(registration) {
                     console.log('service worker completd');
                     registration.update();
