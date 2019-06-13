@@ -3,4 +3,3 @@ Notification.requestPermission(function(result) {
     console.log("通知が許可されています");
   }
   );
-}
