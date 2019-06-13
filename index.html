@@ -32,21 +32,13 @@
               };
         </script>
         <script>
-            (function() {
-              if ("Notification" in window) {
-                var permission = Notification.permission;
-
-                if (permission === "denied" || permission === "granted") {
-                  return;
-                }
-
-                Notification
-                  .requestPermission()
-                  .then(function() {
-                    var notification = new Notification("Hello, world!");
-                  });
-              }
-            })();
+            Notification.requestPermission(function(result) {
+            if (result === 'granted') {
+            navigator.serviceWorker.ready.then(function(registration) {
+            registration.showNotification('Notification with ServiceWorker');
+            });
+            }
+            });
         </script>
     </head>
 
