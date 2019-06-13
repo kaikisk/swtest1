@@ -3,7 +3,7 @@
 setInterval(function(){
     //var appointmentsString = localStorage.getItem('appointments');
     //var appointments = JSON.parse(appointmentsString);
-    var n = new Notification('1日前です',appointments[i].dateClient);
+    var n = new Notification('1日前です',{});
     setTimeout(n.close.bind(n), 20000); 
 
     //for(var i = 0; i < appointments.length; i++){
