@@ -17,24 +17,12 @@
         <script src="./javaScript/confirmDate.js"></script>
         <script> 
             console.log('loading serviceworker');
-            if(!'Notification' in window){
-                alert('未対応のブラウザです');
-            }
               if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register("./serviceworker.js")
-                  .then(function(registration) {
-                    return registration.pushManager.getSubscription().then(function(subscription) {
-                      if (subscription) {
-                        return subscription
-                      }
-                      return registration.pushManager.subscribe({
-                        userVisibleOnly: true
-                      })
-                    })
-                  }).then(function(subscription) {
-                    console.log("pushManager endpoint:", subscription.endpoint) 
-                  })
-              };
+                navigator.serviceWorker.register("./serviceworker.js");
+              }
+              navigator.serviceWorker.ready.then(function(registration){
+              registration.showNotification('1日前だよ');
+              });
         </script>
     </head>
 
