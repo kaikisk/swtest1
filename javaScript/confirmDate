@@ -3,7 +3,8 @@
 setInterval(function(){
     //var appointmentsString = localStorage.getItem('appointments');
     //var appointments = JSON.parse(appointmentsString);
-    alert('起動しています');
+    var n = new Notification('1日前です',appointments[i].dateClient);
+    setTimeout(n.close.bind(n), 20000); 
 
     //for(var i = 0; i < appointments.length; i++){
         //var date = appointments[i].dateClient.split('-');
