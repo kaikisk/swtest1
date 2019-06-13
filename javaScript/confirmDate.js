@@ -6,8 +6,6 @@ setInterval(function(){
     navigator.serviceWorker.ready.then(function(registration){
         registration.showNotification('1日前だよ');
     });
-    var n = new Notification('1日前です',{});
-    setTimeout(n.close.bind(n), 20000); 
 
     //for(var i = 0; i < appointments.length; i++){
         //var date = appointments[i].dateClient.split('-');
@@ -18,5 +16,5 @@ setInterval(function(){
                //setTimeout(n.close.bind(n), 20000); 
         //}
     //}
-}, 300000);
+}, 10000);
 //86400000mm = 1日
