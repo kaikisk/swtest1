@@ -1,10 +1,8 @@
 var appointments;
 $(function() {
     var appointmentsString = localStorage.getItem('appointments');
-    console.log(appointmentsString);
     if (appointmentsString) {
         appointments = JSON.parse(appointmentsString);
-        console.log(appointments)
         for(var i = 0; i < appointments.length; i++) {
             $('#Table1').append( '<tr><td>' + appointments[i].dateClient + 
 '</td><td>' + appointments[i].valClient + '</td><td>' + appointments[i].detailClient 
