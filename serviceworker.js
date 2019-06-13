@@ -22,6 +22,8 @@ var STATIC_FILES = [
     ORIGIN + '/javaScript/checkAppointment.js',
     ORIGIN + '/javaScript/checkResult.js',
     ORIGIN + '/javaScript/editmydata.js',
+    ORIGIN + '/JavaScript/notification.js',
+    ORIGIN + '/JavaScript/confirmDate.js',
     ORIGIN + '/javaScript/login.js',
     ORIGIN + '/javaScript/myData.js',
     ORIGIN + '/javaScript/newlogin.js',
@@ -139,15 +141,28 @@ self.addEventListener('activate', function(event) {
     );
 });
 
-self.addEventListener('push', function(event) {
+self.addEventListener("push", function(event) {
+  console.log("Push Notification Recieved", event);
+  if (Notification.permission == "granted") {
     event.waitUntil(
-        self.registration.showNotification('Push Received', {
-            body: 'Push Notification Received',
-            tag: 'push-notification-tag' 
+      self.registration
+        .showNotification("受信しました", {
+          body: "1日前です。",
+          icon: "revealweb-144.png"
         })
+        .then(
+          function(showEvent) {},
+          function(error) {
+            console.log(error);
+          }
+        )
     );
+  }
 });
 
 self.addEventListener("notificationclick", function(event) {
-    event.notification.close();
-}, false);
+  event.notification.close();
+  event.waitUntil(
+    clients.openWindow("https://kaikisk.github.io/hhswa/checkAppointment.html")
+  );
+});
