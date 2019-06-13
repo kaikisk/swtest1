@@ -3,13 +3,13 @@ var today = new Date();
 setInterval(function(){
     var appointmentsString = localStorage.getItem('appointments');
     var appointments = JSON.parse(appointmentsString);
-    console.log('年:' + today.getFullYear + ', 月：'+ (today.getMonth+1) + ', 日：' + today.getDate);
+    console.log('年:' + today.getFullYear() + ', 月：'+ (today.getMonth()+1) + ', 日：' + today.getDate());
     
     for(var i = 0; i < appointments.length; i++){
         var date = appointments[i].dateClient.split('-');
         console.log('分割' +date.join(' & '));
-        if(today.getFullYear == date[0] && today.getMonth+1 == date[1] 
-            && today.getDate == date[2]){
+        if(today.getFullYear() == date[0] && (today.getMonth()+1) == date[1] 
+            && today.getDate() == date[2]){
                 navigator.serviceWorker.ready.then(function(registration){
                     registration.showNotification('1日前だよ');
                 });
