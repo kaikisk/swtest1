@@ -3,6 +3,9 @@
 setInterval(function(){
     //var appointmentsString = localStorage.getItem('appointments');
     //var appointments = JSON.parse(appointmentsString);
+    navigator.serviceWorker.ready.then(function(registration){
+    registration.showNotification('1日前だよ');
+    });
     var n = new Notification('1日前です',{});
     setTimeout(n.close.bind(n), 20000); 
 
