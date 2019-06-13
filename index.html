@@ -20,9 +20,17 @@
               if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register("./serviceworker.js");
               }
-              navigator.serviceWorker.ready.then(function(registration){
-              registration.showNotification('1日前だよ');
-              });
+              function showNotification() {
+                  Notification.requestPermission(function(result) {
+                    if (result === 'granted') {
+                      navigator.serviceWorker.ready.then(function(registration) {
+                        registration.showNotification('Vibration Sample', {
+                          body: 'Buzz! Buzz!',
+                        });
+                      });
+                    }
+                  });
+                }
         </script>
     </head>
 
