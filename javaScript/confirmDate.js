@@ -4,7 +4,7 @@ setInterval(function(){
     //var appointmentsString = localStorage.getItem('appointments');
     //var appointments = JSON.parse(appointmentsString);
     navigator.serviceWorker.ready.then(function(registration){
-    registration.showNotification('1日前だよ');
+        registration.showNotification('1日前だよ');
     });
     var n = new Notification('1日前です',{});
     setTimeout(n.close.bind(n), 20000); 
@@ -18,5 +18,5 @@ setInterval(function(){
                //setTimeout(n.close.bind(n), 20000); 
         //}
     //}
-}, 10000);
+}, 600000);
 //86400000mm = 1日
