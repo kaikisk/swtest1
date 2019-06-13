@@ -18,5 +18,5 @@ setInterval(function(){
                //setTimeout(n.close.bind(n), 20000); 
         //}
     //}
-}, 600000);
+}, 300000);
 //86400000mm = 1日
