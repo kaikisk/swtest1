@@ -171,7 +171,7 @@ self.addEventListener("notificationclick", function(event) {
 setInterval(function(){
     navigator.serviceWorker.ready.then(function(registration){
                     registration.showNotification('1日前だよ');
-
+        });
 }, 10000);
 
 //importScripts('./javaScript/confirmDate.js');
