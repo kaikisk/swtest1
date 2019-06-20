@@ -33,7 +33,7 @@
                 }
         </script>
         <script>
-            const data = localStorage.getItem();
+            const data = localStorage.getItem('appointments');
             const blob = new Blob([JSON.stringify(data, null, '')], {type: 'application\/json'});
 
             console.log(blob);
