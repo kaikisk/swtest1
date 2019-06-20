@@ -15,6 +15,7 @@ var STATIC_FILES = [
     ORIGIN + '/index.html',
     ORIGIN + '/ratchet.min.css',
     ORIGIN + '/main.css',
+    ORIGIN + '/test.js',
     ORIGIN + '/temp.txt',
     ORIGIN + '/Image/shikkan1.png',
     ORIGIN + '/Image/sikkan2.png',
