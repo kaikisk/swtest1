@@ -3,7 +3,6 @@ var today = new Date();
 setInterval(function(){
     var appointmentsString = localStorage.getItem('appointments');
     var appointments = JSON.parse(appointmentsString);
-    console.log(localStorage.getItem());
     console.log(localStorage.getItem('appointments'));
     console.log('年:' + today.getFullYear() + ', 月：'+ (today.getMonth()+1) + ', 日：' + today.getDate());
     
