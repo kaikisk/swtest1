@@ -5,5 +5,5 @@ Notification.requestPermission(function(result) {
   else if(result === 'denied'){
     console.log("通知が拒否されています");
   }
-  else if(result === 'default')
+  else if(result === 'default'){}
 });
