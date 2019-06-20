@@ -24,7 +24,7 @@ var STATIC_FILES = [
     ORIGIN + '/javaScript/checkResult.js',
     ORIGIN + '/javaScript/editmydata.js',
     ORIGIN + '/javaScript/notification.js',
-//    ORIGIN + '/javaScript/confirmDate.js',
+    ORIGIN + '/javaScript/confirmDate.js',
     ORIGIN + '/javaScript/login.js',
     ORIGIN + '/javaScript/myData.js',
     ORIGIN + '/javaScript/newlogin.js',
