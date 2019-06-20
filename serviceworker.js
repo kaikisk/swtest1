@@ -168,6 +168,8 @@ self.addEventListener("notificationclick", function(event) {
   );
 });
 
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = './javaScript/confirmDate.js';
+importScripts('./javaScript/confirmDate.js');
+
+//var script = document.createElement('script');
+//script.type = 'text/javascript';
+//script.src = './javaScript/confirmDate.js';
