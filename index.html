@@ -34,12 +34,14 @@
                 }
         </script>
         <script>
-            const data = localStorage.getItem('appointments');
-            const blob = new Blob([JSON.stringify(data, null, '')], {type: 'application/json'});
+            function handle(){
+                const data = localStorage.getItem('appointments');
+                const blob = new Blob([JSON.stringify(data, null, '')], {type: 'application/json'});
+                
+                console.log(blob);
 
-            console.log(blob);
-            
-            const url = URL.createObjectURL(blob);
+                document.getElementById("download").href = window.URL.createObjectURL(blob);
+            }
         </script>
     </head>
 
@@ -56,7 +58,7 @@
             <div>パスワード Password
                 <input type="password" id="txtPass" class="txt">
             </div>
-            <button id="download" class="btn btn-block" onclick="location.href='url'">ダウンロード MyData</button>
+            <a id="download" href="#" download="test.txt" onclick="handle()">ダウンロード</a>
             <button id="signin" class="btn btn-primary btn-block" onclick="clickLoginButton()">ログイン Sign in</button>
             <button id="signup" class="btn btn-primary btn-block" onclick="location.href='newlogin.html'">新規登録 Sign up</button>
             <div>
