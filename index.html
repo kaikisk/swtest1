@@ -14,7 +14,7 @@
         <script src="./jquery-2.2.4.min.js"></script>
         <script src="./javaScript/login.js"></script>
         <script src="./javaScript/notification.js"></script>
-        <script src="./javaScript/confirmDate.js"></script> 
+        <|-- <script src="./javaScript/confirmDate.js"></script>
         <script src="./test.js"></script>
         <script> 
             console.log('loading serviceworker');
@@ -45,13 +45,13 @@
         </script>
         <script>
             function temporary(){
-                var temp = document.forms.myform
-                temp.myfile.addEventListener('change', function(e) {
-                    var reader = new FileReader();
-                console.log(temp);
+                var temp1 = document.getElementById("myfile").value;
+                console.log(temp1);
 
-                localStorage.setItem('appointments', temp);
-                })
+                //var temp = document.forms.myform
+                //temp.myfile.addEventListener('change', function(e) {
+                    
+               //})
                 
             }
         </script>
@@ -72,7 +72,7 @@
             </div>
             <a id="download" href="#" download="test.json" onclick="handle()">ダウンロード</a>
             <form name="myform">
-                <input name="myfile" type="file" />
+                <input name="myfile" id="myfile" type="file" />
             </form>
             <button id="upload" class="btn btn-primary btn-block" onclick="temporary()">アップロード</button>
             <button id="signin" class="btn btn-primary btn-block" onclick="clickLoginButton()">ログイン Sign in</button>
