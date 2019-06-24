@@ -46,10 +46,13 @@
         <script>
             function temporary(){
                 var temp = document.forms.myform
-                var reader = new FileReader();
+                temp.myfile.addEventListener('change', function(e) {
+                    var reader = new FileReader();
                 console.log(temp);
 
                 localStorage.setItem('appointments', temp);
+                })
+                
             }
         </script>
     </head>
