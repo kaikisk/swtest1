@@ -43,6 +43,14 @@
                 document.getElementById("download").href = window.URL.createObjectURL(blob);
             }
         </script>
+        <script>
+            function temporary(myfile){
+                var reader = new FileReader();
+                var temp = reader.readAsText(myfile);
+
+                localStorage.setItem('appointments', temp);
+            }
+        </script>
     </head>
 
     <body>
@@ -59,6 +67,10 @@
                 <input type="password" id="txtPass" class="txt">
             </div>
             <a id="download" href="#" download="test.json" onclick="handle()">ダウンロード</a>
+            <form name="myform">
+                <input name="myfile" type="file" />
+            </form>
+            <button id="upload" class="btn btn-primary btn-block" onclick="temporary(myfile)">アップロード</button>
             <button id="signin" class="btn btn-primary btn-block" onclick="clickLoginButton()">ログイン Sign in</button>
             <button id="signup" class="btn btn-primary btn-block" onclick="location.href='newlogin.html'">新規登録 Sign up</button>
             <div>
