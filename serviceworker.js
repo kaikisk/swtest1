@@ -169,18 +169,19 @@ self.addEventListener("notificationclick", function(event) {
   );
 });
 
-var key = "test1";
-		var transaction = db.transaction(["mystore"], "readwrite");
-		var store = transaction.objectStore("mystore");
-		var request = store.get(key);
-		request.onsuccess = function (event) {
-		  if (event.target.result === undefined) {
-		    console.log("error key is undefined");
-		  } else {
-		    // 取得成功
-		    console.log(event.target.result.myvalue);
-		  }
-		}
+var openRequest =  indexedDB.open("mydb");
+
+    openRequest.onsuccess = function(event){
+    var db = event.target.result;
+    var trans = db.transaction("mystore", 'readonly');
+    var store = trans.objectStore("mystore");
+    var getRequest = store.get("test1");
+
+    getRequest.onsuccess = function(event){
+      return event.target.result;
+	    console.log("success");
+    };
+  };
 
 //importScripts('./javaScript/confirmDate.js');
 
