@@ -41,7 +41,8 @@
                                     "bloodType","txtPass","txtName","telAtten"];
                 const jsonData = '';
                 for(var name in storageName){
-                    if(localStorage.getItem(name) !== null){
+                    console.log("name: " + name);
+                    if(localStorage.getItem(name) != null){
                         jsonData[name] = localSorage.getItem(name);
                         console.log(jsonData[name]);
                     }
