@@ -36,6 +36,7 @@
 			db = event.target.result;
 			  console.log("success index db");
 			  add();
+			  get();
 		    }
 		} else {
 		  window.alert("このブラウザではIndexed DataBase API は使えません。");
@@ -46,12 +47,13 @@
 		var value = "test1";
 		var transaction = db.transaction(["mystore"], "readwrite");
 		var store = transaction.objectStore("mystore");
-		var openRequest = store.put({ mykey: key, myvalue: value});
-		openRequest.onsuccess = function (event) {
+		var request = store.put({ mykey: key, myvalue: value});
+		request.onsuccess = function (event) {
 			console.log("success transaction");
 		}
 		}
 
+		function get(){
 		var key = "test1";
 		var transaction = db.transaction(["mystore"], "readwrite");
 		var store = transaction.objectStore("mystore");
@@ -63,6 +65,7 @@
 		    // 取得成功
 		    console.log(event.target.result.myvalue);
 		  }
+		}
 		}
 	</script>
         <script> 
