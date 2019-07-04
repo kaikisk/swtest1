@@ -179,7 +179,7 @@ setInterval(function(){
 	    
 }, 10000);
 
-function get(var db){
+function get(db){
 	var key = "test1";
 	var transaction = db.transaction(["mystore"], "readwrite");
 	var store = transaction.objectStore("mystore");
