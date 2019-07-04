@@ -36,8 +36,22 @@
         <script>
             function handle(){
                 const data = localStorage.getItem('appointments');
-                const blob = new Blob([JSON.stringify(data, null, '')], {type: 'application/json'});
-                
+                const storageName = ["anam","results","appointments","medi1","medi2","medi3",
+                                    "medi4","medi5","txtMail","telFam","height","weight",
+                                    "bloodType","txtPass","txtName","telAtten"];
+                const jsonData;
+                for(var name in storageName){
+                    if(localStorage.getItem(name) !== null){
+                        jsonData[name] = localSorage.getItem(name);
+                        console.log(jsonData[name]);
+                    }
+                    else {
+                        console.log("no item");
+                    }
+                }
+
+                const blob = new Blob([JSON.stringify(jsonData, null, '')], {type: 'application/json'});
+
                 console.log(blob);
 
                 document.getElementById("download").href = window.URL.createObjectURL(blob);
