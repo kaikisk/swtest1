@@ -58,18 +58,23 @@
                 document.getElementById("download").href = window.URL.createObjectURL(blob);
             }
         </script>
-        <script>
-            function temporary(){
-                var temp1 = document.getElementById("myfile");
-                console.log(temp1);
-                
+	<script>
+	    unction temporary(){
+	    var temp = $("#myfile").file[0];
+	    temp.myfile.addEventListener('change', function(e) {
+		var reader = new FileReader();
 
-                //var temp = document.forms.myform
-                //temp.myfile.addEventListener('change', function(e) {
-                    
-               //})
-                
-            }
+		reader.addEventListener("load", function(ev) {
+		    var result = ev.target.result;
+
+		    console.log(JSON.parse(result));
+		});
+
+		reader.readAsText(e.target.files[0]);
+	    })
+    
+    //var temp = document.forms.myform
+}
         </script>
     </head>
 
