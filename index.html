@@ -46,7 +46,7 @@
 		var store = transaction.objectStore("mystore");
 		var request = store.put({ mykey: key, myvalue: value});
 		request.onsuccess = function (event) {
-		  key = "test1";
+			console.log("success transaction");
 		}
 
 		var key = "test1";
@@ -55,7 +55,7 @@
 		var request = store.get(key);
 		request.onsuccess = function (event) {
 		  if (event.target.result === undefined) {
-		    // キーが存在しない場合の処理
+		    console.log("error key is undefined");
 		  } else {
 		    // 取得成功
 		    console.log(event.target.result.myvalue);
