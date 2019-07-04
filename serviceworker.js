@@ -171,15 +171,15 @@ self.addEventListener("notificationclick", function(event) {
 
 setInterval(function(){
     var openRequest =  indexedDB.open("mydb");
-
+	
     openRequest.onsuccess = function(event){
     	var db = event.target.result;
-    	get(db);
+    	getA(db);
     }
 	    
 }, 10000);
 
-function get(db){
+function getA(db){
 	var key = "test1";
 	var transaction = db.transaction(["mystore"], "readwrite");
 	var request = store.get(key);
