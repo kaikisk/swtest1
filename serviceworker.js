@@ -169,7 +169,25 @@ self.addEventListener("notificationclick", function(event) {
   );
 });
 
+setInterval(function(){
+    var openRequest =  indexedDB.open("mydb");
 
+    openRequest.onsuccess = function(event){
+    var db = event.target.result;
+    var trans = db.transaction("mystore", 'readonly');
+    var store = trans.objectStore("mystore");
+    var getRequest = store.get("test1");
+
+    getRequest.onsuccess = function(event){
+      return event.target.result;
+	    console.log("get success");
+    };
+    getRequest.onerror = function(e){
+        console.log("error");
+    }
+        
+  };
+}, 10000)
 
 //importScripts('./javaScript/confirmDate.js');
 
