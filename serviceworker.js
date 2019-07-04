@@ -171,7 +171,6 @@ self.addEventListener("notificationclick", function(event) {
 
 setInterval(function(){
     var openRequest =  indexedDB.open("mydb");
-	console.log(localStorage.getItem('appointment'));
 
     openRequest.onsuccess = function(event){
     	var db = event.target.result;
