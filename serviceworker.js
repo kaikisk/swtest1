@@ -182,7 +182,7 @@ setInterval(function(){
 
 function getA(db){
 	var key = "test1";
-	var transaction = db.transaction(["mystore"], "readwrite");
+	var transaction = db.transaction(["mystore"], "readonly");
 	var request = store.get(key);
 	request.onsuccess = function (event) {
 	  if (event.target.result === undefined) {
