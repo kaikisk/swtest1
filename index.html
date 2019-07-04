@@ -43,7 +43,7 @@
                 for(var name of storageName){
                     console.log("name: " + name);
                     if(localStorage.getItem(name) != null){
-                        jsonData[name] = localSorage.getItem(name);
+                        jsonData[name] = localStorage.getItem(name);
                         console.log(jsonData[name]);
                     }
                     else {
