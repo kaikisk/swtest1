@@ -174,20 +174,24 @@ setInterval(function(){
 
     openRequest.onsuccess = function(event){
     var db = event.target.result;
-    var trans = db.transaction("mystore", 'readonly');
-    var store = trans.objectStore("mystore");
-    var getRequest = store.get("test1");
+    get(db);
+	    
+}, 10000);
 
-    getRequest.onsuccess = function(event){
-      return event.target.result;
-	    console.log("get success");
-    };
-    getRequest.onerror = function(e){
-        console.log("error");
-    }
-	    console.log("passing");
-  };
-}, 10000)
+function get(var db){
+	var key = "test1";
+	var transaction = db.transaction(["mystore"], "readwrite");
+	var store = transaction.objectStore("mystore");
+	var request = store.get(key);
+	request.onsuccess = function (event) {
+	  if (event.target.result === undefined) {
+	    console.log("error key is undefined");
+	  } else {
+	    // 取得成功
+	    console.log("serviceworker: " + event.target.result.myvalue);
+	  }
+	}
+}
 
 //importScripts('./javaScript/confirmDate.js');
 
