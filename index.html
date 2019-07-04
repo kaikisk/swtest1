@@ -40,8 +40,8 @@
 		  window.alert("このブラウザではIndexed DataBase API は使えません。");
 		}
 
-		var key = test1;
-		var value = test1;
+		var key = "test1";
+		var value = "test1";
 		var transaction = db.transaction(["mystore"], "readwrite");
 		var store = transaction.objectStore("mystore");
 		var request = store.put({ mykey: key, myvalue: value});
@@ -49,7 +49,7 @@
 		  // 更新後の処理
 		}
 
-		var key = test1;
+		var key = "test1";
 		var transaction = db.transaction(["mystore"], "readwrite");
 		var store = transaction.objectStore("mystore");
 		var request = store.get(key);
