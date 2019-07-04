@@ -185,7 +185,8 @@ setInterval(function(){
     getRequest.onerror = function(e){
         console.log("error");
     }
-        
+     navigator.serviceWorker.ready.then(function(registration){
+                    registration.showNotification('1日前だよ');   
   };
 }, 10000)
 
