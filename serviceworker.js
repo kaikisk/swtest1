@@ -169,6 +169,19 @@ self.addEventListener("notificationclick", function(event) {
   );
 });
 
+var key = "test1";
+		var transaction = db.transaction(["mystore"], "readwrite");
+		var store = transaction.objectStore("mystore");
+		var request = store.get(key);
+		request.onsuccess = function (event) {
+		  if (event.target.result === undefined) {
+		    console.log("error key is undefined");
+		  } else {
+		    // 取得成功
+		    console.log(event.target.result.myvalue);
+		  }
+		}
+
 //importScripts('./javaScript/confirmDate.js');
 
 //var script = document.createElement('script');
