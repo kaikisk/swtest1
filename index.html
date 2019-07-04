@@ -40,7 +40,7 @@
                                     "medi4","medi5","txtMail","telFam","height","weight",
                                     "bloodType","txtPass","txtName","telAtten"];
                 const jsonData = '';
-                for(var name in storageName){
+                for(var name of storageName){
                     console.log("name: " + name);
                     if(localStorage.getItem(name) != null){
                         jsonData[name] = localSorage.getItem(name);
