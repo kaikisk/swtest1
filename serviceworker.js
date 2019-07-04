@@ -1,4 +1,4 @@
-var ORIGIN = location.protocol + '//' + location.hostname + '/hhswa';
+var ORIGIN = location.protocol + '//' + location.hostname + '/swtest1';
 var STATIC_CACHE_NAME = 'static_v1';
 console.log('ORIGIN : ' + ORIGIN);
 var STATIC_FILES = [
@@ -164,12 +164,7 @@ self.addEventListener("push", function(event) {
 
 self.addEventListener("notificationclick", function(event) {
   event.notification.close();
-  event.waitUntil(
-    clients.openWindow("https://kaikisk.github.io/hhswa/checkAppointment.html")
-  );
-});
-
-var openRequest =  indexedDB.open("mydb");
+	var openRequest =  indexedDB.open("mydb");
 
     openRequest.onsuccess = function(event){
     var db = event.target.result;
@@ -182,6 +177,12 @@ var openRequest =  indexedDB.open("mydb");
 	    console.log("success");
     };
   };
+  event.waitUntil(
+    clients.openWindow("https://kaikisk.github.io/hhswa/checkAppointment.html")
+  );
+});
+
+
 
 //importScripts('./javaScript/confirmDate.js');
 
