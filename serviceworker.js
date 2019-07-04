@@ -169,6 +169,7 @@ self.addEventListener("notificationclick", function(event) {
   );
 });
 
+/*
 setInterval(function(){
     var openRequest =  indexedDB.open("mydb");
 	
@@ -192,6 +193,7 @@ function getA(db){
 	  }
 	}
 }
+*/
 
 //importScripts('./javaScript/confirmDate.js');
 
