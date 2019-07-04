@@ -173,8 +173,9 @@ setInterval(function(){
     var openRequest =  indexedDB.open("mydb");
 
     openRequest.onsuccess = function(event){
-    var db = event.target.result;
-    get(db);
+    	var db = event.target.result;
+    	get(db);
+    }
 	    
 }, 10000);
 
