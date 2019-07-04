@@ -35,18 +35,21 @@
 		  openRequest.onsuccess = function(event) {
 			db = event.target.result;
 			  console.log("success index db");
+			  add();
 		    }
 		} else {
 		  window.alert("このブラウザではIndexed DataBase API は使えません。");
 		}
 
+		function add(){
 		var key = "test1";
 		var value = "test1";
 		var transaction = db.transaction(["mystore"], "readwrite");
 		var store = transaction.objectStore("mystore");
-		var request = store.put({ mykey: key, myvalue: value});
-		request.onsuccess = function (event) {
+		var openRequest = store.put({ mykey: key, myvalue: value});
+		openRequest.onsuccess = function (event) {
 			console.log("success transaction");
+		}
 		}
 
 		var key = "test1";
