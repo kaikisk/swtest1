@@ -111,21 +111,25 @@
             }
         </script>
 	<script>
-	    function temporary(){
-	    var temp = $("#myfile");
-	    temp.myfile.addEventListener('change', function(e) {
-		var reader = new FileReader();
-
-		reader.addEventListener("load", function(ev) {
-		    var result = ev.target.result;
-
-		    console.log(JSON.parse(result));
-		});
-
-		reader.readAsText(e.target.files[0]);
-	    })
-    
-    	//var temp = document.forms.myform
+		function temporary(){
+			var file = document.getElementById("myfile").files[0];
+			const reader = new FileReader();
+			console.log();
+			reader.onload = function(e){
+			  result.innerText = e.target.result;
+				console.log(e.target.result);
+				register(e.target.result);
+			};
+			reader.readAsText(file);
+		//var temp = document.forms.myform
+		}
+	function register(e){
+	    const data = JSON.parse(e);
+	    console.log(data);
+	    for(var name in data){
+		console.log(name);
+		localStorage.setItem(name, data[name]);
+	    }
 	}
         </script>
     </head>
